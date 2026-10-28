@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CGPA Booster | Academic Performance Tracker</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="script.js" defer></script>
+</head>
+<body>
+
+    <header>
+        <div class="logo">🎓 CGPA Booster</div>
+        <nav>
+            <a href="#calculator">SGPA Calculator</a>
+            <a href="#dashboard">Dashboard</a>
+            <a href="#predictor">CGPA Predictor</a>
+        </nav>
+    </header>
+
+    <main>
+        <section class="hero">
+            <h1>Boost Your Academic Performance</h1>
+            <p>
+                Calculate your SGPA, track your CGPA, and plan
+                your academic goals with ease.
+            </p>
+            <a href="#calculator" class="btn">Get Started</a>
+        </section>
+
+        <section id="calculator" class="card">
+            <h2>📚 SGPA Calculator</h2>
+            <p>Enter your subject credits and grade points.</p>
+
+            <div class="input-group">
+                <label for="semesterName">Semester Name</label>
+                <input type="text" id="semesterName"
+                       placeholder="Example: Semester 1">
+            </div>
+
+            <div id="subjects"></div>
+
+            <button class="secondary-btn" id="addSubject">
+                + Add Subject
+            </button>
+
+            <button class="primary-btn" id="calculateSGPA">
+                Calculate & Save SGPA
+            </button>
+
+            <div class="result">
+                <h3>Your SGPA</h3>
+                <h1 id="sgpaResult">0.00</h1>
+            </div>
+        </section>
+
+        <section id="dashboard" class="card">
+            <h2>📊 Academic Dashboard</h2>
+
+            <div class="stats">
+                <div class="stat-box">
+                    <h3>Current CGPA</h3>
+                    <p id="currentCGPA">0.00</p>
+                </div>
+
+                <div class="stat-box">
+                    <h3>Semesters Completed</h3>
+                    <p id="totalSemesters">0</p>
+                </div>
+
+                <div class="stat-box">
+                    <h3>Total Credits</h3>
+                    <p id="totalCredits">0</p>
+                </div>
+            </div>
+
+            <div class="chart-container">
+                <canvas id="performanceChart"></canvas>
+            </div>
+
+            <h3>Semester History</h3>
+            <div id="semesterHistory"></div>
+
+            <button class="danger-btn" id="clearData">
+                Clear All Records
+            </button>
+        </section>
+
+        <section id="predictor" class="card">
+            <h2>🎯 Target CGPA Predictor</h2>
+
+            <p>
+                Find the average grade point required
+                in your remaining credits.
+            </p>
+
+            <div class="input-group">
+                <label for="targetCGPA">Target CGPA</label>
+                <input type="number" id="targetCGPA"
+                       min="0" max="10" step="0.01"
+                       placeholder="Example: 8.50">
+            </div>
+
+            <div class="input-group">
+                <label for="remainingCredits">Remaining Credits</label>
+                <input type="number" id="remainingCredits"
+                       min="1" step="1"
+                       placeholder="Example: 40">
+            </div>
+
+            <button class="primary-btn" id="predictCGPA">
+                Predict Required Performance
+            </button>
+
+            <div class="prediction-result" id="predictionResult">
+                Enter your target CGPA and remaining credits.
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>© 2026 CGPA Booster | Built with HTML, CSS & JavaScript</p>
+    </footer>
+
+</body>
+</html>
